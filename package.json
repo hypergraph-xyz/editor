@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "run-p start:*",
-    "start:server": "node server",
+    "start:server": "nodemon --watch server.js server.js",
     "start:react": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
@@ -36,5 +36,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^2.0.0"
+  }
 }
