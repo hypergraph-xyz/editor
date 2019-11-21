@@ -1,13 +1,10 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Wax, CreateSchema } from 'wax-prosemirror-core'
 import { DefaultSchema } from 'wax-prosemirror-schema'
-import useSWR from 'swr'
 
 const options = {
   schema: new CreateSchema(DefaultSchema)
 }
-
-const fetcher = url => fetch(url).then(r => r.text())
 
 const App = () => {
   const [content, setContent] = useState(null)
@@ -18,11 +15,14 @@ const App = () => {
     setContent(content)
   }
 
-  const { data } = useSWR('/content', fetcher)
-  if (!data) return null
+  const load = async () => {
+    const res = await fetch('/content')
+    setContent(await res.text())
+  }
+
+  useEffect(() => load(), [])
 
   const save = async () => {
-    if (!content) return
     setModified(false)
     await fetch('/content', {
       method: 'PUT',
@@ -30,10 +30,12 @@ const App = () => {
     })
   }
 
+  if (content === null) return null
+
   return (
     <Fragment>
       <button onClick={save} disabled={!content || !modified}>Save</button>
-      <Wax options={options} autoFocus value={data} debug onChange={onChange} />
+      <Wax options={options} autoFocus value={content} debug onChange={onChange} />
     </Fragment>
   )
 }
