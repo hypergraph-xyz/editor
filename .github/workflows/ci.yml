@@ -9,8 +9,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
-    - name: Use latest npm
-      run: npm install -g npm@latest
     - name: npm install and test
       run: |
         npm ci
