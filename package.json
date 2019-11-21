@@ -6,10 +6,8 @@
     "start:server": "nodemon --watch server.js server.js /tmp/hypergraph.txt",
     "start:react": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "run-s standard test:*",
-    "test:react": "react-app-rewired test",
-    "eject": "react-scripts eject",
-    "standard": "prettier-standard && standard"
+    "test": "prettier-standard && standard",
+    "eject": "react-scripts eject"
   },
   "bin": {
     "hypergraph-edit": "./bin/hypergraph-edit.js"
@@ -17,6 +15,11 @@
   "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "standard": {
+    "ignore": [
+      "build/"
+    ]
   },
   "browserslist": {
     "production": [
