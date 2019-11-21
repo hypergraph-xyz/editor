@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "npm-run-all": "^4.1.5",
+    "open": "^7.0.0",
     "react": "^16.12.0",
     "react-app-rewired": "^2.1.5",
     "react-dom": "^16.12.0",
@@ -23,7 +24,7 @@
     "standard": "prettier-standard && standard"
   },
   "bin": {
-    "hypergraph-edit": "server.js"
+    "hypergraph-edit": "./bin/hypergraph-edit.js"
   },
   "proxy": "http://localhost:8080",
   "eslintConfig": {

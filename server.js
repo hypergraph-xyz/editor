@@ -13,8 +13,6 @@ if (!path) {
 const serve = serveStatic(`${__dirname}/build`)
 
 const server = http.createServer((req, res) => {
-  console.log(req.method, req.url)
-
   if (req.method === 'GET') {
     serve(req, res, () => {
       fs.readFile(path, 'utf8', (_, content) => {
@@ -26,4 +24,8 @@ const server = http.createServer((req, res) => {
   }
 })
 
-server.listen(8080)
+if (!module.parent) {
+  server.listen(8080)
+}
+
+module.exports = server
