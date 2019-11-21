@@ -1,0 +1,7 @@
+{
+  "name": "@hypergraph-xyz/editor",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "hypergraph-xyz/editor",
+  "description": "The Hypergraph Editor"
+}
