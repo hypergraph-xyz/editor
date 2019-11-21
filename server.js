@@ -23,7 +23,6 @@ const server = http.createServer((req, res) => {
     })
   } else if (req.method === 'PUT') {
     req.pipe(fs.createWriteStream(path)).on('close', () => res.end())
-
   }
 })
 
