@@ -1,6 +1,6 @@
 {
   "name": "@hypergraph-xyz/editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "run-p start:*",
     "start:server": "nodemon --watch server.js server.js /tmp/hypergraph.txt",
