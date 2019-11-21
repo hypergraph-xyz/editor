@@ -22,6 +22,9 @@
     "eject": "react-scripts eject",
     "standard": "prettier-standard && standard"
   },
+  "bin": {
+    "hypergraph-edit": "server.js"
+  },
   "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": "react-app"
