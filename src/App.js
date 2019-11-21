@@ -1,6 +1,8 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Wax, CreateSchema } from 'wax-prosemirror-core'
 import { DefaultSchema } from 'wax-prosemirror-schema'
+
+const { fetch } = window
 
 const options = {
   schema: new CreateSchema(DefaultSchema)
@@ -33,10 +35,18 @@ const App = () => {
   if (content === null) return null
 
   return (
-    <Fragment>
-      <button onClick={save} disabled={!content || !modified}>Save</button>
-      <Wax options={options} autoFocus value={content} debug onChange={onChange} />
-    </Fragment>
+    <>
+      <button onClick={save} disabled={!content || !modified}>
+        Save
+      </button>
+      <Wax
+        options={options}
+        autoFocus
+        value={content}
+        debug
+        onChange={onChange}
+      />
+    </>
   )
 }
 

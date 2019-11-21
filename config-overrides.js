@@ -10,10 +10,10 @@ module.exports = config => ({
         include: /wax-prosemirror-core/,
         options: {
           presets: [
-            [require("@babel/preset-env"), { modules: false }],
-            require("@babel/preset-react")
+            [require('@babel/preset-env'), { modules: false }],
+            require('@babel/preset-react')
           ],
-          plugins: [require("@babel/plugin-proposal-class-properties")]
+          plugins: [require('@babel/plugin-proposal-class-properties')]
         }
       }
     ]

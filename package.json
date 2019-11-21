@@ -16,8 +16,10 @@
     "start:server": "nodemon --watch server.js server.js",
     "start:react": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "test": "run-s standard test:*",
+    "test:react": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "standard": "prettier-standard && standard"
   },
   "proxy": "http://localhost:8080",
   "eslintConfig": {
@@ -36,6 +38,8 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^2.0.0"
+    "nodemon": "^2.0.0",
+    "prettier-standard": "^15.0.1",
+    "standard": "^14.3.1"
   }
 }

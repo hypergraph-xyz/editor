@@ -1,4 +1,3 @@
-
 'use strict'
 
 const http = require('http')
@@ -12,7 +11,7 @@ const server = http.createServer((req, res) => {
     res.end(content)
   } else if (req.method === 'PUT') {
     let data = ''
-    req.on('data', d => data += d.toString())
+    req.on('data', d => (data += d.toString()))
     req.on('end', () => {
       content = data
       res.end()
