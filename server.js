@@ -2,8 +2,13 @@
 
 const http = require('http')
 const serveStatic = require('serve-static')
+const fs = require('fs')
 
-let content = 'DATA'
+const path = process.argv[2]
+if (!path) {
+  console.error('Usage: hypergraph-edit PATH')
+  process.exit(1)
+}
 
 const serve = serveStatic(`${__dirname}/build`)
 
@@ -12,15 +17,13 @@ const server = http.createServer((req, res) => {
 
   if (req.method === 'GET') {
     serve(req, res, () => {
-      res.end(content)
+      fs.readFile(path, 'utf8', (_, content) => {
+        res.end(content || '')
+      })
     })
   } else if (req.method === 'PUT') {
-    let data = ''
-    req.on('data', d => (data += d.toString()))
-    req.on('end', () => {
-      content = data
-      res.end()
-    })
+    req.pipe(fs.createWriteStream(path)).on('close', () => res.end())
+
   }
 })
 

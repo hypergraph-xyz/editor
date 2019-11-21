@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "run-p start:*",
-    "start:server": "nodemon --watch server.js server.js",
+    "start:server": "nodemon --watch server.js server.js /tmp/hypergraph.txt",
     "start:react": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "run-s standard test:*",
