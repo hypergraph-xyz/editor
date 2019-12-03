@@ -4,7 +4,7 @@ import { EditoriaLayout } from 'wax-prosemirror-layouts'
 import * as options from './EditoriaConfig'
 import styled, { createGlobalStyle } from 'styled-components'
 
-const { fetch } = window
+const { fetch, FileReader } = window
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -22,7 +22,17 @@ const StyledWax = styled(Wax)`
   .wax-surface-scroll {
     height: ${props => (props.debug ? "50vh" : "100%")};
   }
-`;
+`
+
+const renderImage = file => {
+  const reader = new FileReader()
+  return new Promise((resolve, reject) => {
+    reader.onload = () => resolve(reader.result)
+    reader.onerror = () => reject(reader.error)
+    // Some extra delay to make the asynchronicity visible
+    setTimeout(() => reader.readAsDataURL(file), 150)
+  })
+}
 
 const App = () => {
   const [content, setContent] = useState(null)
@@ -59,6 +69,7 @@ const App = () => {
       <StyledWax
         options={options}
         autoFocus
+        fileUploader={renderImage}
         value={content}
         debug
         onChange={onChange}
