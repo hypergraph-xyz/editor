@@ -7,7 +7,7 @@ module.exports = config => ({
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: /wax-prosemirror-core/,
+        include: /wax-prosemirror-(core|layouts|components)/,
         options: {
           presets: [
             [require('@babel/preset-env'), { modules: false }],

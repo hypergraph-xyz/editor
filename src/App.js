@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { Wax, CreateSchema } from 'wax-prosemirror-core'
-import { DefaultSchema } from 'wax-prosemirror-schema'
+import { Wax } from 'wax-prosemirror-core'
+import { EditoriaLayout } from 'wax-prosemirror-layouts'
+import { schema, keys, plugins, rules } from './EditoriaConfig'
 
 const { fetch } = window
 
 const options = {
-  schema: new CreateSchema(DefaultSchema)
+  schema,
+  plugins,
+  keys,
+  rules
 }
 
 const App = () => {
@@ -45,7 +49,11 @@ const App = () => {
         value={content}
         debug
         onChange={onChange}
-      />
+      >
+        {({ editor, view, ...props }) => (
+          <EditoriaLayout editor={editor} view={view} {...props} />
+        )}
+      </Wax>
     </>
   )
 }
