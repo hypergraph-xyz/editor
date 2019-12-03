@@ -2,9 +2,13 @@
 'use strict'
 process.title = 'hypergraph-edit'
 
-const server = require('../server')
-const open = require('open')
+const Editor = require('..')
 
-server.listen(() => {
-  open(`http://localhost:${server.address().port}`)
-})
+const path = process.argv[2]
+if (!path) {
+  console.error('Usage: hypergraph-edit PATH')
+  process.exit(1)
+}
+
+const editor = new Editor(path)
+editor.open()

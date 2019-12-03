@@ -13,3 +13,10 @@ $ npm install -g @hypergraph-xyz/editor
 ```bash
 $ hypergraph-edit FILE
 ```
+
+```js
+const Editor = require('@hypergraph-xyz/editor')
+
+const editor = new Editor('FILE')
+editor.open()
+```
