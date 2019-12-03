@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Wax } from 'wax-prosemirror-core'
 import { EditoriaLayout } from 'wax-prosemirror-layouts'
-import { schema, keys, plugins, rules } from './EditoriaConfig'
+import * as options from './EditoriaConfig'
 
 const { fetch } = window
-
-const options = {
-  schema,
-  plugins,
-  keys,
-  rules
-}
 
 const App = () => {
   const [content, setContent] = useState(null)
