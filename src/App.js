@@ -16,11 +16,11 @@ const GlobalStyle = createGlobalStyle`
       width:100vw;
     }
   }
-`;
+`
 
 const StyledWax = styled(Wax)`
   .wax-surface-scroll {
-    height: ${props => (props.debug ? "50vh" : "100%")};
+    height: ${props => (props.debug ? '50vh' : '100%')};
   }
 `
 
@@ -71,7 +71,6 @@ const App = () => {
         autoFocus
         fileUploader={renderImage}
         value={content}
-        debug
         onChange={onChange}
       >
         {({ editor, view, ...props }) => (
