@@ -2,6 +2,8 @@
 
 The Hypergraph Editor
 
+![Screenshot](screenshot.png)
+
 ## Installation
 
 ```bash
