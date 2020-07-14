@@ -1,6 +1,6 @@
 # editor
 
-The Hypergraph Editor
+The Hypergraph Editor, based on [Wax](https://gitlab.coko.foundation/wax/wax-prosemirror).
 
 ![Screenshot](screenshot.png)
 
