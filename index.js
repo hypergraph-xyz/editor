@@ -9,13 +9,11 @@ class Editor {
   }
 
   open ({ silent }) {
-    if (silent) {
-      this.server.listen(() => {})
-    } else {
-      this.server.listen(() => {
+    this.server.listen(() => {
+      if (!silent) {
         open(`http://localhost:${this.server.address().port}`)
-      })
-    }
+      }
+    })
   }
 }
 
