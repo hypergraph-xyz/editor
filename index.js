@@ -8,7 +8,7 @@ class Editor {
     this.server = createServer(path)
   }
 
-  open (silent) {
+  open ({ silent }) {
     if (silent) {
       this.server.listen(() => {})
     } else {
