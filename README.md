@@ -1,6 +1,9 @@
 # Hypergraph Editor <img src="https://raw.githubusercontent.com/hypergraph-xyz/design/main/hypergraph-logomark-1024-square.png" align="right" height="64" />
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 The Hypergraph Editor, based on [Wax](https://gitlab.coko.foundation/wax/wax-prosemirror). This is a partnership between [Coko](https://coko.foundation) and [Liberate Science](https://libscie.org) (see announcement [here](https://blog.libscie.org/partnering-with-coko/)).
@@ -42,6 +45,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

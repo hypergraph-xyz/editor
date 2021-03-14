@@ -8,9 +8,11 @@ class Editor {
     this.server = createServer(path)
   }
 
-  open () {
+  open ({ silent }) {
     this.server.listen(() => {
-      open(`http://localhost:${this.server.address().port}`)
+      if (!silent) {
+        open(`http://localhost:${this.server.address().port}`)
+      }
     })
   }
 }
