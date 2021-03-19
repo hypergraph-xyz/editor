@@ -14,6 +14,14 @@
   "bin": {
     "hypergraph-edit": "./bin/hypergraph-edit.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypergraph-xyz/editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hypergraph-xyz/editor/issues"
+  },
+  "homepage": "https://github.com/hypergraph-xyz/editor#readme",
   "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": "react-app"
